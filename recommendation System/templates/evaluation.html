@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evalution page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+<!-- Evaluation Metrics Section -->
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Evaluation Metrics</h2>
+  <div class="row mt-4">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Precision: {{ precision }}</h5>
+          <h5 class="card-title">Recall: {{ recall }}</h5>
+          <h5 class="card-title">F1 Score: {{ f1_score }}</h5>
+          <h5 class="card-title">Accuracy: {{ accuracy }}</h5>
+          <h5 class="card-title">Confusion Matrix:</h5>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">True Positive</th>
+                <th scope="col">False Positive</th>
+                <th scope="col">False Negative</th>
+                <th scope="col">True Negative</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{ confusion_matrix[0][0] }}</td>
+                <td>{{ confusion_matrix[0][1] }}</td>
+                <td>{{ confusion_matrix[1][0] }}</td>
+                <td>{{ confusion_matrix[1][1] }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
